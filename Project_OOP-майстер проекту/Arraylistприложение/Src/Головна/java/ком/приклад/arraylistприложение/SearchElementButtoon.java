@@ -21,8 +21,8 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class SearchElementButtoon {
 
-    private static int values;
-   private static String element;
+
+
     private static int s;
     private static int indexSerch;
     private static ArrayList<Element> arrayList = ArrayListServise.getArrayList();
@@ -61,13 +61,12 @@ public class SearchElementButtoon {
                 showMessageDialog(null, "Індекс не може бути пустим!Введіть індекс.", "Eror,index for search Empty!", ERROR_MESSAGE);
             } else {
                 String text1 = elementSearch.getText();
-                values = Integer.parseInt(text1);
-                element = arrayList.get(indexSerch).getElement();
-
+                indexSerch = Integer.parseInt(text1);
+                
                 Rectangle rect = new Rectangle(100, 60);
                 rect.setFill(arrayList.get(indexSerch).getColor());
                 Text text = new Text((String) arrayList.get(indexSerch).getElement());
-                Text index = new Text(Integer.toString(values));
+                Text index = new Text(Integer.toString(indexSerch));
                 index.setTranslateY(-20);
                 index.setTranslateX(-40);
                 elementFound.getChildren().addAll(rect, index, text);
@@ -99,5 +98,3 @@ public class SearchElementButtoon {
     }
 
 }
-
-
